@@ -1,0 +1,49 @@
+/* styles.css */
+
+.app {
+  /* Styles for the app component */
+  padding: 20px;
+}
+
+.cart-icon-container {
+  /* Styles for the cart icon container */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f8f8f8;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cart {
+  /* Styles for the cart container */
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #f8f8f8;
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.cart.open {
+  /* Styles for the open cart */
+  right: 0;
+}
+
+.cart-icon {
+  /* Styles for the cart icon */
+  /* Add styles for the cart icon */
+}
+
+.cart-contents {
+  /* Styles for the cart contents */
+  padding: 20px;
+}
+
+/* Add any additional styles as needed */
