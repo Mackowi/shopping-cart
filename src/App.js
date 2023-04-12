@@ -18,10 +18,16 @@ export default function App() {
 
   const [cartItems, setCartItems] = useState([])
 
-  function handleAddToCart(dog) {
+  function addToCart(dog) {
     setCartItems(() => [
       ...cartItems,
       dog
+    ])
+  }
+  
+  function removeFromCart(dog) {
+    setCartItems(() => [
+      cartItems.filter(item => item.name !== dog.name)
     ])
   }
 
@@ -36,7 +42,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/cart" element={<Cart />}/>
-            <Route path="/dogs" element={<Dogs dogs={dogs} handleAddToCart={handleAddToCart} />}/>
+            <Route path="/dogs" element={<Dogs dogs={dogs} cartItems={cartItems} addToCart={addToCart} removeFromCart={removeFromCart}/>}/>
           </Routes>
         </Router>
       {/* <div className="cart-icon-container" onClick={handleCartToggle}>
