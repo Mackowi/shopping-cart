@@ -18,15 +18,25 @@ export default function App() {
 
   const [cartItems, setCartItems] = useState([])
 
+  function handleAddToCart(dog) {
+    setCartItems(() => [
+      ...cartItems,
+      dog
+    ])
+  }
+
+  function clearCart() {
+    setCartItems([]);
+  }
 
   return (
     <div className="app">
         <Router>
-          <Header />
+          <Header cartItems={cartItems}/>
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/cart" element={<Cart />}/>
-            <Route path="/dogs" element={<Dogs dogs={dogs}/>}/>
+            <Route path="/dogs" element={<Dogs dogs={dogs} handleAddToCart={handleAddToCart} />}/>
           </Routes>
         </Router>
       {/* <div className="cart-icon-container" onClick={handleCartToggle}>

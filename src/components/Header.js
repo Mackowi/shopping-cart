@@ -2,7 +2,9 @@ import React from 'react'
 import { FaBone, FaDog, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({ cartItems }) {
+
+  // console.log(`HEADER - cartItems.lenght =  ${cartItems.length}`)
 
   return (
     <>
@@ -25,8 +27,9 @@ export default function Header() {
             </li>
             <li>
               <Link to='/Cart' className='link'>
-              Cart
+              Cart {cartItems.length ? `[${cartItems.length}]` : ''}
               <FaShoppingCart className='cart-icon'/>
+              
               </Link>
             </li>
           </ul>
