@@ -1,26 +1,74 @@
-/* styles.css */
+* {
+	margin: 0;
+	padding: 0;
+}
 
-.app {
-  /* Styles for the app component */
-  padding: 20px;
+.header {
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: x-large;
+    background-color: #ff8c42;
+    color: #36453b;
+    font-weight: 600;
+    padding:0 5rem 0 2.5rem ;
+    border-bottom: 3px solid #36453b;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo {
+  transform: rotate(135deg);
+  scale: 2;
+  margin: 0 2.5rem 0.5rem 0;
+}
+
+.header-right {
+  display: flex;
+  gap: 5rem;
+  list-style: none;
+}
+
+.header-right > * {
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.header-right > *:hover {
+  text-decoration: underline;
 }
 
 .cart-icon-container {
-  /* Styles for the cart icon container */
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
-  background-color: #f8f8f8;
-  width: 40px;
-  height: 40px;
+  color: #ff8c42;
+  border-radius: 20px;
+  background-color: #596869;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 
+.cart-icon-container > * {
+  width: 25px;
+  height: 25px;
+}
+
+.cart-icon-container > *:hover {
+  width: 30px;
+  height: 30px;
+}
+
 .cart {
-  /* Styles for the cart container */
   position: fixed;
   top: 0;
   right: -300px;
@@ -32,18 +80,9 @@
 }
 
 .cart.open {
-  /* Styles for the open cart */
   right: 0;
 }
 
-.cart-icon {
-  /* Styles for the cart icon */
-  /* Add styles for the cart icon */
-}
-
 .cart-contents {
-  /* Styles for the cart contents */
   padding: 20px;
 }
-
-/* Add any additional styles as needed */
