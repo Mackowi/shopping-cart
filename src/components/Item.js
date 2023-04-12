@@ -7,10 +7,13 @@ export default function Item({ dog }) {
   }
 
   return (
-    <div className='item'>
+    <li className='item'>
       <img src={dog.img} alt={dog.name}></img>
-      <h3>{capitalize(dog.name)}</h3>
-      <p>{dog.price}$</p>
-    </div>
+      <div className='item-details'>
+        <h3>{capitalize(dog.name)}</h3>
+        <p>Price: {dog.price}$</p>
+        <button>Add to cart</button>
+      </div>
+    </li>
   )
 }

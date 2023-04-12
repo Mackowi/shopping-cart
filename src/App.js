@@ -6,15 +6,18 @@ import Home from './components/Home';
 import { useState } from 'react';
 // import CompactCart from './components/CompactCart';
 // import { FaShoppingCart } from 'react-icons/fa';
+import dogs from './dogs/dogItems'
 import './styles/styles.css';
 
 export default function App() {
 
   // const [isCartOpen, setIsCartOpen] = useState(false)
-
   // const handleCartToggle = () => {
   //   setIsCartOpen(!isCartOpen);
   // };
+
+  const [cartItems, setCartItems] = useState([])
+
 
   return (
     <div className="app">
@@ -23,7 +26,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/cart" element={<Cart />}/>
-            <Route path="/dogs" element={<Dogs />}/>
+            <Route path="/dogs" element={<Dogs dogs={dogs}/>}/>
           </Routes>
         </Router>
       {/* <div className="cart-icon-container" onClick={handleCartToggle}>
