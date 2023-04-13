@@ -4,17 +4,10 @@ import Cart from './components/Cart';
 import Dogs from './components/Dogs';
 import Home from './components/Home';
 import { useState } from 'react';
-// import CompactCart from './components/CompactCart';
-// import { FaShoppingCart } from 'react-icons/fa';
 import dogs from './dogs/dogItems'
 import './styles/styles.css';
 
 export default function App() {
-
-  // const [isCartOpen, setIsCartOpen] = useState(false)
-  // const handleCartToggle = () => {
-  //   setIsCartOpen(!isCartOpen);
-  // };
 
   const [cartItems, setCartItems] = useState([])
 
@@ -26,9 +19,11 @@ export default function App() {
   }
   
   function removeFromCart(dog) {
-    setCartItems(() => [
-      cartItems.filter(item => item.name !== dog.name)
-    ])
+    const index = cartItems.findIndex(item => item.name === dog.name)
+    const itemsBefore = cartItems.slice(0, index);
+    const itemsAfter = cartItems.slice(index + 1);
+    const newCartItems = [...itemsBefore, ...itemsAfter]
+    setCartItems(() => newCartItems)
   }
 
   function clearCart() {
@@ -41,14 +36,10 @@ export default function App() {
           <Header cartItems={cartItems}/>
           <Routes>
             <Route path="/" element={<Home />}/>
-            <Route path="/cart" element={<Cart />}/>
+            <Route path="/cart" element={<Cart cartItems={cartItems} removeFromCart={removeFromCart} clearCart={clearCart}/>}/>
             <Route path="/dogs" element={<Dogs dogs={dogs} cartItems={cartItems} addToCart={addToCart} removeFromCart={removeFromCart}/>}/>
           </Routes>
         </Router>
-      {/* <div className="cart-icon-container" onClick={handleCartToggle}>
-        <FaShoppingCart />
-      </div>
-      <CompactCart isCartOpen={isCartOpen} handleCartToggle={handleCartToggle} /> */}
     </div>
   );
 }

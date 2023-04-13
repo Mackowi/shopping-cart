@@ -7,7 +7,7 @@ export default function Home() {
     <div className='home'>
       <h1>We're having only the good bois!</h1>
       <Link to="/Dogs" className='link'>
-        <p className='dogs-link'>Check them</p>
+        <p className='home-dogs-link'>Check them</p>
       </Link>
     </div>
   )

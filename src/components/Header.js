@@ -11,7 +11,7 @@ export default function Header({ cartItems }) {
       <div className='header'>
         <Link to='/' className='link'>
           <div className='header-left'>
-            <div className='logo'>
+            <div className='header-logo'>
                 <FaBone/>
             </div>
             <h1>DOG SHOP</h1>
@@ -22,15 +22,16 @@ export default function Header({ cartItems }) {
             <li>
               <Link to='/Dogs' className='link'>
               Dogs
-              <FaDog className='dogs-icon'/>
+              <FaDog className='header-dogs-icon'/>
               </Link>
             </li>
-            <li>
+            <li >
+              <div>
               <Link to='/Cart' className='link'>
               Cart {cartItems.length ? `[${cartItems.length}]` : ''}
-              <FaShoppingCart className='cart-icon'/>
-              
+              <FaShoppingCart className='header-cart-icon'/>
               </Link>
+              </div>
             </li>
           </ul>
         </div>
